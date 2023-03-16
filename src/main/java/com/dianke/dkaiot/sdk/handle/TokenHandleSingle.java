@@ -48,13 +48,16 @@ public class TokenHandleSingle {
 						new Object[] { var2 });
 			}
 
-		}, 200L, 60L, TimeUnit.SECONDS);
+		}, 60L * 10, 60L, TimeUnit.SECONDS);
 	}
 
 	public static synchronized TokenHandleSingle getInstance(String client, String secret) {
 		TokenHandleSingle instance = SingletonHolder.INSTANCE;
 		instance.setClient(client);
 		instance.setSecret(secret);
+
+		log.info("************** 【DK-IOT-SDK】 token keepAlive check will start in one minute.");
+
 		return instance;
 	}
 
@@ -97,8 +100,6 @@ public class TokenHandleSingle {
 		Long currentTime = System.currentTimeMillis() / 1000;
 		if (this.iotToken.getExpires_in() - currentTime <= 10 * 60) {
 			this.iotToken = this.refreshToken();
-			log.warn("当前Token:{}, 失效于：{}", this.iotToken.getAccess_token(), this.iotToken.getExpires_in());
-
 		}
 	}
 

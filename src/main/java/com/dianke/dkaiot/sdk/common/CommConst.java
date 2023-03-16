@@ -25,8 +25,6 @@ public abstract class CommConst {
 
 	public final static String RE_WARN = "WARN";
 
-
-
 	/** 接口未授权 */
 	public final static String UNAUTHORIZED = "UNAUTHORIZED";
 

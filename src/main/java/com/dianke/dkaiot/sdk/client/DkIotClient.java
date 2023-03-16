@@ -43,7 +43,7 @@ public class DkIotClient implements IotClient {
 		else {
 			log.info("************** 【DK-IOT-SDK】 init successful. ");
 		}
-		log.warn("【Token保活机制将于一分钟后启动】");
+//		log.warn("【Token保活机制将于一分钟后启动】");
 		this.tokenHandleSingle = TokenHandleSingle.getInstance(clientId, clientSecret);
 		this.tokenHandleSingle.setIotToken(iotTokenResponse);
 
