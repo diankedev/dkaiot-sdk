@@ -7,7 +7,7 @@ package com.dianke.dkaiot.sdk.common;
  */
 public abstract class CommConst {
 
-	public static final String SERVER_PREFIX = "http://192.168.1.49/tppl";
+	public static final String SERVER_PREFIX = "https://dianke-aiot.com/tppl";
 
 	public static final String Authorization = "Authorization";
 

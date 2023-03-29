@@ -1,9 +1,6 @@
 package com.dianke.dkaiot.sdk.client;
 
-import com.dianke.dkaiot.sdk.common.dto.DevActive;
-import com.dianke.dkaiot.sdk.common.dto.DevConfig;
-import com.dianke.dkaiot.sdk.common.dto.QueryDev;
-import com.dianke.dkaiot.sdk.common.dto.SendVoice;
+import com.dianke.dkaiot.sdk.common.dto.*;
 import com.dianke.dkaiot.sdk.handle.DkException;
 
 /**
@@ -24,5 +21,7 @@ public interface IotClient {
 	String queryDev(QueryDev queryDev) throws DkException;
 
 	void config(DevConfig devConfig) throws DkException;
+
+	void changeBind(ChangeBind changeBind) throws DkException;
 
 }

@@ -100,6 +100,12 @@ public class DkIotClient implements IotClient {
 		dealRequest(function, this.tokenHandleSingle.getIotToken().getAccess_token());
 	}
 
+	@Override
+	public void changeBind(ChangeBind changeBind) throws DkException {
+		IotFunction function = new DevBindFun().setParams(JSONUtil.parseObj(changeBind));
+		dealRequest(function, this.tokenHandleSingle.getIotToken().getAccess_token());
+	}
+
 	/**
 	 * 公共请求处理
 	 */
